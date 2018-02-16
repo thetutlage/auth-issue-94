@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello Adonis</title>
+  {{ css('style') }}
+</head>
+<body>
+  @if(auth.user)
+    <a href="/logout"> Logout </a>
+  @else
+    <form method="POST" action="/login">
+      {{ csrfField() }}
+      <input type="text" name="username" placeholder="Enter username">
+      <input type="text" name="password" placeholder="Enter password">
+      <button> Login </button>
+    </form>
+  @endif
+</body>
+</html>
